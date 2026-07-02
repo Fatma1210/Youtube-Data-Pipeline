@@ -59,14 +59,14 @@ python src/main.py
 Verify `youtube_data.db` is created with populated `channels`, `videos`, and `comments` tables.
 ```
 
+
 ## Pipeline Architecture
 
-```markdown
-<img width="1431" height="741" alt="Youtube ETL Pipeline-Page-2 drawio" src="https://github.com/user-attachments/assets/fab7a087-b12f-49b6-b13f-7d1bd809a453" />
+![Pipeline Architecture](images/pipeline.png)
 
-```
 ## Console Output
-```markdown
-<img width="1115" height="259" alt="image" src="https://github.com/user-attachments/assets/aef8b832-1335-42ef-839d-a010d45d783a" />
-```
+
+![Console Output](images/console output.png)
+
+
 
