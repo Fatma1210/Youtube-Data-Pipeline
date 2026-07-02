@@ -108,11 +108,10 @@ class APIClient:
             all_videos.extend(data.get(ITEMS, []))
 
         return all_videos
-    def get_video_comments(self, video_id, max_results=3):
+    def get_video_comments(self, video_id):
         params = {
             'part': DataPieceTypeEnum.SNIPPET.value,
             'videoId': video_id,
-            'maxResults': max_results,
             'key': self.api_key
         }
         data = self._get(DataPieceEnum.COMMENT_THREADS.value, params)
