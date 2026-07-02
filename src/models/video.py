@@ -1,15 +1,23 @@
-from pydantic import BaseModel
+# models/video.py
+from sqlmodel import SQLModel, Field, Relationship
 from datetime import datetime
-from typing import List
-from .comment import Comment
+from typing import List, Optional, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from models.channel import Channel
+    from models.comment import Comment
 
 
-class Video(BaseModel):
-    id: str
+class Video(SQLModel, table=True):
+    __tablename__ = 'videos'
+
+    id: str = Field(primary_key=True)
     title: str
-    channel: str
+    channel_id: str = Field(foreign_key="channels.id")
     published_at: datetime
-    view_count: int
-    like_count: int
-    comment_count: int
-    comments: List[Comment] = []
+    view_count: int = 0
+    like_count: int = 0
+    comment_count: int = 0
+
+    channel: Optional["Channel"] = Relationship(back_populates="videos")
+    comments: List["Comment"] = Relationship(back_populates="video")
