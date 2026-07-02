@@ -1,3 +1,6 @@
 requests
 python-dotenv
 pydantic_settings
+emoji
+sqlalchemy
+sqlmodel
