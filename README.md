@@ -66,7 +66,7 @@ Verify `youtube_data.db` is created with populated `channels`, `videos`, and `co
 
 ## Console Output
 
-![Console Output](images/console output.png)
+![Console Output](images/console_output.png)
 
 
 
